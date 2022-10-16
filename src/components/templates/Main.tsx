@@ -1,6 +1,8 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 
 import type { ReactNode } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RiInstagramFill, RiWhatsappFill } from "react-icons/ri";
@@ -10,9 +12,9 @@ import { Dialog, Transition } from "@headlessui/react";
 import { AppConfig } from "@/utils/AppConfig";
 import { Sidebar } from "@/components/layouts/Sidebar/Sidebar";
 
-import logo from "@/images/true_logo_onpink.png";
-import Image from "next/image";
-import Link from "next/link";
+import logo from "@/images/true_logo_browser_sidebar.png";
+
+import { cx } from "@/utils/cx";
 
 type IMainProps = {
   meta: ReactNode;
@@ -22,36 +24,68 @@ type IMainProps = {
 export const Main = (props: IMainProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [announcement, setAnnouncement] = useState(true);
+
+  const closeAnnouncement = () => {
+    setAnnouncement(false);
+  };
+
   return (
     <div className="flex flex-col lg:flex-row text-gray-100 antialiased">
       {props.meta}
-      <div className="lg:hidden">
-        <div className="flex justify-between items-center px-8 py-4">
-          <Image src={logo} width={60} height={55} />
+      <div
+        className={cx(
+          announcement
+            ? "flex text-center cursor-pointer shadow-lg fixed top-0 left-0 w-screen z-10"
+            : "hidden"
+        )}
+      >
+        <Link href="#">
+          <div className="bg-true-lightpink basis-11/12 text-white py-2">
+            TRUE Beauty Studio, Jalan...... Click to book.
+          </div>
+        </Link>
+        <div
+          className="bg-true-pink basis-1/12 py-2 hover:bg-true-darkpink transition-colors duration-300 ease-in-out"
+          onClick={closeAnnouncement}
+        >
+          x
+        </div>
+      </div>
+      <div className="lg:hidden overflow-x-hidden">
+        <div
+          className={cx(
+            "flex justify-between items-center px-8 py-4",
+            announcement && "mt-9"
+          )}
+        >
+          <Image src={logo} width={111.5} height={49.94} />
           <GiHamburgerMenu
             className="text-3xl"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => {
+              setIsOpen(true);
+            }}
           />
         </div>
         <Transition show={isOpen} as={Fragment}>
           <Dialog
             unmount={false}
-            open={isOpen}
-            onClose={() => setIsOpen(false)}
+            onClose={() => {
+              setIsOpen(false);
+            }}
             className="fixed z-40 inset-0 overflow-y-auto"
           >
-            <div className="flex w-[34vw]">
+            <div className="flex w-3/5 md:w-5/12">
               <Transition.Child
                 as={Fragment}
                 enter="transition-opacity ease-in duration-300"
                 enterFrom="opacity-0"
-                enterTo="opacity-30"
-                entered="opacity-30"
+                enterTo="opacity-70"
                 leave="transition-opacity ease-out duration-300"
-                leaveFrom="opacity-30"
+                leaveFrom="opacity-70"
                 leaveTo="opacity-0"
               >
-                <Dialog.Overlay className="z-20 fixed inset-0 bg-black bg-opacity-30" />
+                <Dialog.Overlay className="z-20 fixed inset-0 bg-black bg-opacity-50" />
               </Transition.Child>
               <Transition.Child
                 as={Fragment}
@@ -75,10 +109,20 @@ export const Main = (props: IMainProps) => {
           </Dialog>
         </Transition>
       </div>
-      <aside className="lg:basis-1/6 overflow-y-auto custom-scroll h-screen hidden lg:block">
+      <aside
+        className={cx(
+          "lg:basis-1/6 overflow-y-auto custom-scroll h-screen hidden lg:block",
+          announcement && "mt-9"
+        )}
+      >
         <Sidebar />
       </aside>
-      <main className="flex-col lg:basis-5/6 overflow-y-auto overflow-x-hidden custom-scroll h-screen px-4 md:py-4 md:px-8 lg:px-16 lg:py-12">
+      <main
+        className={cx(
+          "flex-col lg:basis-5/6 overflow-y-auto overflow-x-hidden custom-scroll h-screen px-4 py-4 pb-8 md:px-8 lg:px-16 lg:py-12",
+          announcement && "mt-9"
+        )}
+      >
         {props.children}
         <footer className="flex flex-col gap-8 justify-center items-center mt-8 text-center text-sm">
           <div className="flex gap-4 group justify-end">

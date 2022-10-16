@@ -9,8 +9,6 @@ import { HiMail } from "react-icons/hi";
 import { Meta } from "@/components/layouts/Meta";
 import { Main } from "@/components/templates/Main";
 
-import logo from "@/images/true_logo.png";
-
 import image1 from "@/images/photo-1.jpg";
 import image2 from "@/images/photo-2.jpg";
 import image3 from "@/images/photo-3.jpg";
@@ -31,10 +29,10 @@ const Home: NextPage = () => {
             <RiInstagramFill className="text-4xl lg:text-2xl text-gray-300 cursor-pointer  hover:text-white transition-colors duration-150 ease-in-out" />
           </Link>
           <Link href="https://whatsapp.com">
-            <RiWhatsappFill className="text-4xl lg:text-2xl text-gray-300 cursor-pointer opacity-90 hover:text-white transition-colors duration-150 ease-in-out" />
+            <RiWhatsappFill className="text-4xl lg:text-2xl text-gray-300 cursor-pointer hover:text-white transition-colors duration-150 ease-in-out" />
           </Link>
           <Link href="mailto:example@mail.com">
-            <HiMail className="text-4xl lg:text-2xl text-gray-300 cursor-pointer opacity-90 hover:text-white transition-color duration-150 ease-in-out" />
+            <HiMail className="text-4xl lg:text-2xl text-gray-300 cursor-pointer hover:text-white transition-colors duration-150 ease-in-out" />
           </Link>
         </div>
         <div className="flex flex-col gap-8 items-end py-8 md:py-14">
