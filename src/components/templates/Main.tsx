@@ -56,7 +56,7 @@ export const Main = (props: IMainProps) => {
         <div
           className={cx(
             "flex justify-between items-center px-8 py-4",
-            announcement && "mt-9"
+            announcement && "lg:pt-9"
           )}
         >
           <Image src={logo} width={111.5} height={49.94} />
@@ -112,7 +112,7 @@ export const Main = (props: IMainProps) => {
       <aside
         className={cx(
           "lg:basis-1/6 overflow-y-auto custom-scroll h-screen hidden lg:block",
-          announcement && "mt-9"
+          announcement && "pt-9"
         )}
       >
         <Sidebar />
@@ -120,7 +120,7 @@ export const Main = (props: IMainProps) => {
       <main
         className={cx(
           "flex-col lg:basis-5/6 overflow-y-auto overflow-x-hidden custom-scroll h-screen px-4 py-4 pb-8 md:px-8 lg:px-16 lg:py-12",
-          announcement && "mt-9"
+          announcement && "pt-9"
         )}
       >
         {props.children}

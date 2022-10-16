@@ -9,10 +9,6 @@ import { HiMail } from "react-icons/hi";
 import { Meta } from "@/components/layouts/Meta";
 import { Main } from "@/components/templates/Main";
 
-import image1 from "@/images/photo-1.jpg";
-import image2 from "@/images/photo-2.jpg";
-import image3 from "@/images/photo-3.jpg";
-
 import square1 from "@/images/square-1.jpg";
 import { Card } from "@/components/layouts/Card/Card";
 
