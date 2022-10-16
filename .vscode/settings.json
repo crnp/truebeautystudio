@@ -1,0 +1,10 @@
+{
+"isGitignoreExtActive": true,
+"search.exclude": {
+  "package-lock.json": true
+},
+"editor.codeActionsOnSave": [
+  "source.addMissingImports",
+  "source.fixAll.eslint"
+],
+}

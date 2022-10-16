@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply bg-true-gray font-sans;
+  }
+}
+
+.true-button {
+  @apply bg-true-pink px-8 py-6 font-bold transition-opacity duration-150 ease-in-out;
+  letter-spacing: 0.2em;
+}
+
+.true-button:hover {
+  @apply opacity-80;
+}
