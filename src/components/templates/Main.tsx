@@ -1,4 +1,6 @@
-import { ReactNode, useState, Fragment } from "react";
+import { useState, Fragment } from "react";
+
+import type { ReactNode } from "react";
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RiInstagramFill, RiWhatsappFill } from "react-icons/ri";
@@ -87,7 +89,7 @@ export const Main = (props: IMainProps) => {
               <RiWhatsappFill className="text-4xl text-gray-300 cursor-pointer opacity-90 hover:text-white transition-colors duration-150 ease-in-out" />
             </Link>
             <Link href="mailto:example@mail.com">
-              <HiMail className="text-4xl text-gray-300 cursor-pointer opacity-90 hover:text-white transition-color duration-150 ease-in-out" />
+              <HiMail className="text-4xl text-gray-300 cursor-pointer opacity-90 hover:text-white transition-colors duration-150 ease-in-out" />
             </Link>
           </div>
           © Copyright {new Date().getFullYear()} {AppConfig.title}.

@@ -1,5 +1,5 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
-import { ReactNode } from "react";
 
 import { cx } from "@/utils/cx";
 

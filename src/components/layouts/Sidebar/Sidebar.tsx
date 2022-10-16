@@ -5,7 +5,8 @@ import { FiChevronRight } from "react-icons/fi";
 import { Popover, Transition } from "@headlessui/react";
 
 import logo from "@/images/true_logo.png";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
+import type { ReactNode } from "react";
 
 import { cx } from "@/utils/cx";
 
