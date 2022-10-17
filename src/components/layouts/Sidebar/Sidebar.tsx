@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { RiInstagramFill, RiWhatsappFill } from "react-icons/ri";
+import {
+  RiInstagramFill,
+  RiWhatsappFill,
+  RiFacebookFill,
+} from "react-icons/ri";
+import { IoLogoTiktok } from "react-icons/io5";
 import { HiMail } from "react-icons/hi";
 import { FiChevronRight } from "react-icons/fi";
 import { Popover, Transition } from "@headlessui/react";
@@ -38,31 +43,60 @@ export const Sidebar = () => {
             />
           </Link>
           <div className="flex-col justify-center items-center border-b border-white border-opacity-10 py-4 w-full">
-            <Sidebar.Item name="Welcome" link="/" />
-            <Sidebar.Item name="SKIN CLINIC" link="#" dropdown>
-              <Sidebar.ItemChild name="SKIN CLINIC" link="#" />
-              <Sidebar.ItemChild name="INSTANT SKIN BAR" link="#" />
+            <Sidebar.Item name="SELAMAT DATANG" link="/" />
+            <Sidebar.Item name="TENTANG PERAWATAN RAMBUT" link="#" dropdown>
+              <Sidebar.ItemChild name="HAIR TREATMENT CREAMBATHS" link="#" />
+              <Sidebar.ItemChild name="KERATIN STRAIGHTENING" link="#" />
+              <Sidebar.ItemChild name="HAIRCUTS" link="#" />
+              <Sidebar.ItemChild name="COLOURING" link="#" />
+              <Sidebar.ItemChild name="HAIR MASK" link="#" />
+              <Sidebar.ItemChild name="SMOOTHING+" link="#" />
             </Sidebar.Item>
-            <Sidebar.Item name="DAY SPA" link="#" dropdown>
-              <Sidebar.ItemChild name="DAY SPA OVERVIEW" link="#" />
-              <Sidebar.ItemChild name="AWAKEN RITUALS" link="#" />
-              <Sidebar.ItemChild name="MASSAGE" link="#" />
+            <Sidebar.Item
+              name="TENTANG PERAWATAN TUBUH DAN KULIT"
+              link="#"
+              dropdown
+            >
+              <Sidebar.ItemChild name="BODY WHITENING" link="#" />
+              <Sidebar.ItemChild name="BODY SCRUB" link="#" />
+              <Sidebar.ItemChild name="WAXING" link="#" />
+              <Sidebar.ItemChild name="RATUS TREATMENT" link="#" />
+              <Sidebar.ItemChild name="SAUNA" link="#" />
             </Sidebar.Item>
-            <Sidebar.Item name="HAIR SALON" link="#" />
+            <Sidebar.Item name="TENTANG PERAWATAN WAJAH" link="#" dropdown>
+              <Sidebar.ItemChild name="ACNE TREATMENT" link="#" />
+              <Sidebar.ItemChild name="GLOW ENHANCING" link="#" />
+              <Sidebar.ItemChild name="SLOW AGING TREATMENT" link="#" />
+              <Sidebar.ItemChild name="SNOW BRIGHTENING" link="#" />
+              <Sidebar.ItemChild name="MICRODERMABRATION" link="#" />
+              <Sidebar.ItemChild name="FACE DETOX" link="#" />
+            </Sidebar.Item>
+            <Sidebar.Item name="KATALOG PRODUK (COMING SOON)" link="#" />
             <Sidebar.Item name="BOOK NOW ⟶" link="#" />
           </div>
           <div className="flex-col justify-center items-center border-b border-white border-opacity-10 py-4 w-full">
-            <Sidebar.Item name="OUR PHILOSOPHY" link="#" secondary />
-            <Sidebar.Item name="GALLERY" link="#" secondary />
-            <Sidebar.Item name="SPECIAL OFFERS" link="#" secondary />
-            <Sidebar.Item name="CONTACT US" link="#" secondary />
+            <Sidebar.Item name="FILOSOFI TRUE." link="#" secondary />
+            <Sidebar.Item name="GALERI & BERITA" link="#" secondary />
+            <Sidebar.Item name="BEAUTY BAR" link="#" secondary />
+            <Sidebar.Item name="LOKASI" link="#" secondary />
+            <Sidebar.Item name="HUBUNGI KAMI" link="#" secondary />
+            <Sidebar.Item name="KRITIK DAN SARAN" link="#" secondary />
+            <Sidebar.Item name="BEAUTY BLOGS" link="#" secondary />
+            <Sidebar.Item name="KARIR" link="#" secondary />
+            <Sidebar.Item name="SUBSCRIBE" link="#" secondary />
           </div>
-          <div className="flex justify-between items-center p-4 w-full">
+          <div className="flex wrap gap-2 justify-around items-center p-4 w-full">
+            <Link href="https://whatsapp.com">
+              <RiWhatsappFill className="text-3xl text-gray-300 cursor-pointer hover:text-white transition-colors duration-300 ease-in-out" />
+            </Link>
             <Link href="https://instagram.com">
               <RiInstagramFill className="text-3xl text-gray-300 cursor-pointer hover:text-white transition-colors duration-300 ease-in-out" />
             </Link>
-            <Link href="https://whatsapp.com">
-              <RiWhatsappFill className="text-3xl text-gray-300 cursor-pointer hover:text-white transition-colors duration-300 ease-in-out" />
+            <Link href="https://tiktok.com">
+              <IoLogoTiktok className="text-3xl text-gray-300 cursor-pointer hover:text-white transition-colors duration-300 ease-in-out" />
+            </Link>
+            <Link href="https://facebook.com">
+              <RiFacebookFill className="text-3xl text-gray-300 cursor-pointer hover:text-white transition-colors duration-300 ease-in-out" />
             </Link>
             <Link href="mailto:example@mail.com">
               <HiMail className="text-3xl text-gray-300 cursor-pointer hover:text-white transition-colors duration-300 ease-in-out" />
@@ -105,7 +139,7 @@ const Item = ({
                 </h3>
                 <FiChevronRight
                   className={cx(
-                    "text-2xl text-true-pink group-hover:text-white",
+                    "text-[3em] text-true-pink group-hover:text-white",
                     secondary && "text-true-dark-pink",
                     open &&
                       "text-white rotate-90 transform transition-transform ease-linear duration-75"
@@ -148,7 +182,7 @@ const Item = ({
 };
 const ItemChild = (props: ISidebarItemChildProps) => (
   <Link href={props.link}>
-    <li className="py-1 cursor-pointer font-semibold hover:text-true-pink transition-colors duration-300 ease-in-out">
+    <li className="py-1 cursor-pointer font-semibold border-b border-white border-opacity-20 hover:text-true-pink transition-colors duration-300 ease-in-out">
       {props.name}
     </li>
   </Link>

@@ -27,7 +27,7 @@ export const Card = (props: ICard) => {
       >
         {props.title}
       </h1>
-      <p className="text-base lg:text-lg">{props.children}</p>
+      <p className="text-base font-semibold lg:text-lg">{props.children}</p>
       <Link href={props.link}>
         <button className="bg-true-gray text-white px-16 py-3 font-bold transition-opacity duration-150 ease-in-out hover:opacity-80">
           {props.button}

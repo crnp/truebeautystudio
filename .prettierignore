@@ -9,7 +9,7 @@
 next.config.js
 next-seo.config.js
 postcss.config.js
-tailwind.config.js
+# tailwind.config.js
 
 # production
 /build

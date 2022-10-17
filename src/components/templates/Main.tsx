@@ -5,7 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { GiHamburgerMenu } from "react-icons/gi";
-import { RiInstagramFill, RiWhatsappFill } from "react-icons/ri";
+import {
+  RiInstagramFill,
+  RiWhatsappFill,
+  RiFacebookFill,
+  RiCloseFill,
+} from "react-icons/ri";
+import { IoLogoTiktok } from "react-icons/io5";
 import { HiMail } from "react-icons/hi";
 import { Dialog, Transition } from "@headlessui/react";
 
@@ -31,7 +37,7 @@ export const Main = (props: IMainProps) => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row text-gray-100 antialiased">
+    <div className="flex flex-col lg:flex-row text-gray-100 antialiased overflow-y-hidden h-screen">
       {props.meta}
       <div
         className={cx(
@@ -41,18 +47,27 @@ export const Main = (props: IMainProps) => {
         )}
       >
         <Link href="#">
-          <div className="bg-true-lightpink basis-11/12 text-white py-2">
-            TRUE Beauty Studio, Jalan...... Click to book.
+          <div className="bg-true-lightpink basis-11/12 text-white text-sm py-2">
+            <p>Setiap Treatment anda berkontribusi untuk lingkungan.</p>
+            <p>
+              <Link href="#">
+                <div className="text-true-gray">
+                  Jl Ashofa Raya No 56, Kebon Jeruk, Jakarta Barat
+                </div>
+              </Link>
+              | Buka SETIAP HARI dari pukul 10-21 WIB | (+62) 8-9999-43-888 |
+              Klik disini untuk buat appointment perawatan
+            </p>
           </div>
         </Link>
         <div
-          className="bg-true-pink basis-1/12 py-2 hover:bg-true-darkpink transition-colors duration-300 ease-in-out"
+          className="flex bg-true-pink basis-1/12 text-2xl items-center justify-center py-2 hover:bg-true-darkpink transition-colors duration-300 ease-in-out"
           onClick={closeAnnouncement}
         >
-          x
+          <RiCloseFill />
         </div>
       </div>
-      <div className="lg:hidden overflow-x-hidden">
+      <div className="sticky lg:hidden overflow-x-hidden py-2">
         <div
           className={cx(
             "flex justify-between items-center px-8 py-4",
@@ -124,19 +139,30 @@ export const Main = (props: IMainProps) => {
         )}
       >
         {props.children}
-        <footer className="flex flex-col gap-8 justify-center items-center mt-8 text-center text-sm">
-          <div className="flex gap-4 group justify-end">
+        <footer className="flex flex-col justify-center items-center mt-8 text-center text-sm">
+          <div className="flex gap-4 mb-6 group justify-end">
+            <Link href="https://whatsapp.com">
+              <RiWhatsappFill className="text-4xl text-gray-300 cursor-pointer opacity-90 hover:text-white transition-colors duration-150 ease-in-out" />
+            </Link>
             <Link href="https://instagram.com">
               <RiInstagramFill className="text-4xl text-gray-300 cursor-pointer  hover:text-white transition-colors duration-150 ease-in-out" />
             </Link>
-            <Link href="https://whatsapp.com">
-              <RiWhatsappFill className="text-4xl text-gray-300 cursor-pointer opacity-90 hover:text-white transition-colors duration-150 ease-in-out" />
+            <Link href="https://tiktok.com">
+              <IoLogoTiktok className="text-4xl text-gray-300 cursor-pointer  hover:text-white transition-colors duration-150 ease-in-out" />
+            </Link>
+            <Link href="https://facebook.com">
+              <RiFacebookFill className="text-4xl text-gray-300 cursor-pointer  hover:text-white transition-colors duration-150 ease-in-out" />
             </Link>
             <Link href="mailto:example@mail.com">
               <HiMail className="text-4xl text-gray-300 cursor-pointer opacity-90 hover:text-white transition-colors duration-150 ease-in-out" />
             </Link>
           </div>
-          © Copyright {new Date().getFullYear()} {AppConfig.title}.
+          <span>
+            © {new Date().getFullYear()} {AppConfig.title}, All Rights Reserved.
+          </span>
+          <span className="italic">
+            Website created by <b>Calvin</b> and <b>Noosa Technologies</b>
+          </span>
         </footer>
       </main>
     </div>
