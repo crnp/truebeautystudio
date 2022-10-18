@@ -42,23 +42,26 @@ export const Main = (props: IMainProps) => {
       <div
         className={cx(
           announcement
-            ? "flex text-center cursor-pointer shadow-lg fixed top-0 left-0 w-screen z-10"
+            ? "flex text-center shadow-lg fixed top-0 left-0 w-screen z-10"
             : "hidden"
         )}
       >
         <Link href="#">
-          <div className="bg-true-lightpink basis-11/12 text-white text-sm py-2">
-            <p>Setiap Treatment anda berkontribusi untuk lingkungan.</p>
-            <p>
-              <Link href="#">
-                <div className="text-true-gray">
-                  Jl Ashofa Raya No 56, Kebon Jeruk, Jakarta Barat
-                </div>
-              </Link>
-              | Buka SETIAP HARI dari pukul 10-21 WIB | (+62) 8-9999-43-888 |
+          <span className="bg-true-lightpink basis-11/12 text-white font-serif text-xs py-2">
+            Setiap Treatment anda berkontribusi untuk lingkungan. <br />
+            <Link href="#">
+              <span className="text-true-gray cursor-pointer hover:text-true-lighterpink inline-block">
+                Jl Ashofa Raya No 56, Kebon Jeruk, Jakarta Barat
+              </span>
+            </Link>
+            <span className="inline-block px-1">
+              {" | "}
+              Buka SETIAP HARI dari pukul 10-21 WIB | (+62) 8-9999-43-888{" | "}
+            </span>
+            <span className="text-true-gray cursor-pointer hover:text-true-lighterpink inline-block">
               Klik disini untuk buat appointment perawatan
-            </p>
-          </div>
+            </span>
+          </span>
         </Link>
         <div
           className="flex bg-true-pink basis-1/12 text-2xl items-center justify-center py-2 hover:bg-true-darkpink transition-colors duration-300 ease-in-out"
@@ -67,7 +70,7 @@ export const Main = (props: IMainProps) => {
           <RiCloseFill />
         </div>
       </div>
-      <div className="sticky lg:hidden overflow-x-hidden py-2">
+      <div className={cx("sticky lg:hidden py-2", announcement && "pt-10")}>
         <div
           className={cx(
             "flex justify-between items-center px-8 py-4",
@@ -126,16 +129,16 @@ export const Main = (props: IMainProps) => {
       </div>
       <aside
         className={cx(
-          "lg:basis-1/6 overflow-y-auto custom-scroll h-screen hidden lg:block",
-          announcement && "pt-9"
+          "lg:basis-1/5 overflow-y-auto custom-scroll h-screen hidden lg:block",
+          announcement && "pt-12"
         )}
       >
         <Sidebar />
       </aside>
       <main
         className={cx(
-          "flex-col lg:basis-5/6 overflow-y-auto overflow-x-hidden custom-scroll h-screen px-4 py-4 pb-8 md:px-8 lg:px-16",
-          announcement ? "lg:py-16" : "lg:py-12"
+          "flex-col lg:basis-4/5 lg:overflow-y-auto overflow-x-hidden lg:custom-scroll h-screen px-4 py-4 pb-8 md:px-8 lg:px-16",
+          announcement ? "lg:pt-20" : "lg:pt-12"
         )}
       >
         {props.children}

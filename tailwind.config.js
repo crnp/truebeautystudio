@@ -19,7 +19,7 @@ module.exports = {
       },
       fontFamily: {
         sans: "Lato, sans-serif",
-        serif: "'Noto Serif', serif",
+        serif: "Georgia, serif",
       },
     },
   },

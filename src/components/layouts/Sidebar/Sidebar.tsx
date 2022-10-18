@@ -44,7 +44,8 @@ export const Sidebar = () => {
           </Link>
           <div className="flex-col justify-center items-center border-b border-white border-opacity-10 py-4 w-full">
             <Sidebar.Item name="SELAMAT DATANG" link="/" />
-            <Sidebar.Item name="TENTANG PERAWATAN RAMBUT" link="#" dropdown>
+            <Sidebar.Item name="SALON RAMBUT" link="#" dropdown>
+              <Sidebar.ItemChild name="TENTANG PERAWATAN RAMBUT" link="#" />
               <Sidebar.ItemChild name="HAIR TREATMENT CREAMBATHS" link="#" />
               <Sidebar.ItemChild name="KERATIN STRAIGHTENING" link="#" />
               <Sidebar.ItemChild name="HAIRCUTS" link="#" />
@@ -52,18 +53,19 @@ export const Sidebar = () => {
               <Sidebar.ItemChild name="HAIR MASK" link="#" />
               <Sidebar.ItemChild name="SMOOTHING+" link="#" />
             </Sidebar.Item>
-            <Sidebar.Item
-              name="TENTANG PERAWATAN TUBUH DAN KULIT"
-              link="#"
-              dropdown
-            >
+            <Sidebar.Item name="TUBUH DAN KULIT" link="#" dropdown>
+              <Sidebar.ItemChild
+                name="TENTANG PERAWATAN TUBUH DAN KULIT"
+                link="#"
+              />
               <Sidebar.ItemChild name="BODY WHITENING" link="#" />
               <Sidebar.ItemChild name="BODY SCRUB" link="#" />
               <Sidebar.ItemChild name="WAXING" link="#" />
               <Sidebar.ItemChild name="RATUS TREATMENT" link="#" />
               <Sidebar.ItemChild name="SAUNA" link="#" />
             </Sidebar.Item>
-            <Sidebar.Item name="TENTANG PERAWATAN WAJAH" link="#" dropdown>
+            <Sidebar.Item name="FACE TREATMENT" link="#" dropdown>
+              <Sidebar.ItemChild name="TENTANG PERAWATAN WAJAH" link="#" />
               <Sidebar.ItemChild name="ACNE TREATMENT" link="#" />
               <Sidebar.ItemChild name="GLOW ENHANCING" link="#" />
               <Sidebar.ItemChild name="SLOW AGING TREATMENT" link="#" />
@@ -139,7 +141,7 @@ const Item = ({
                 </h3>
                 <FiChevronRight
                   className={cx(
-                    "text-[3em] text-true-pink group-hover:text-white",
+                    "text-lg text-true-pink group-hover:text-white",
                     secondary && "text-true-dark-pink",
                     open &&
                       "text-white rotate-90 transform transition-transform ease-linear duration-75"
@@ -156,7 +158,7 @@ const Item = ({
               leaveTo="-translate-y-5 opacity-0"
             >
               <Popover.Panel className="z-0 flex mb-2 ml-3 border-l border-true-pink text-white justify-start items-center gap-4 px-3 p-2">
-                <ul>{props.children}</ul>
+                <ul className="w-full">{props.children}</ul>
               </Popover.Panel>
             </Transition>
           </>
@@ -182,7 +184,7 @@ const Item = ({
 };
 const ItemChild = (props: ISidebarItemChildProps) => (
   <Link href={props.link}>
-    <li className="py-1 cursor-pointer font-semibold border-b border-white border-opacity-20 hover:text-true-pink transition-colors duration-300 ease-in-out">
+    <li className="py-1 cursor-pointer text-xs font-semibold border-b border-white border-opacity-20 hover:text-true-pink transition-colors duration-300 ease-in-out">
       {props.name}
     </li>
   </Link>

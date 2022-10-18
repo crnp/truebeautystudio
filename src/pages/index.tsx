@@ -70,7 +70,7 @@ const Home: NextPage = () => {
         <p className="font-serif mb-6">
           Percaya-lah kepada jati diri-mu. Sebuah kalimat yang kami percaya
           dapat menjadi penyemangat kamu untuk memulai hari.{" "}
-          <b>TRUE. Beauty Studio </b>
+          <b className="font-semibold text-true-pink">TRUE. Beauty Studio </b>
           menawarkan pengalaman perawatan diri yang berbeda. Kami berada di
           bilangan Kebon Jeruk, Jakarta Barat dengan lokasi yang mudah
           dijangkau. Nikmati pengalaman konsultasi serta pengerjaan staf ahli
