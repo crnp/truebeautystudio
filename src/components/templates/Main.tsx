@@ -50,15 +50,16 @@ export const Main = (props: IMainProps) => {
           <span className="bg-true-lightpink basis-11/12 text-white font-serif text-xs py-2">
             Setiap Treatment anda berkontribusi untuk lingkungan. <br />
             <Link href="#">
-              <span className="text-true-gray cursor-pointer hover:text-true-lighterpink inline-block">
+              <span className="mr-1 text-true-gray cursor-pointer hover:text-true-lighterpink inline-block">
                 Jl Ashofa Raya No 56, Kebon Jeruk, Jakarta Barat
               </span>
             </Link>
-            <span className="inline-block px-1">
+            <span className="inline-block">
               {" | "}
-              Buka SETIAP HARI dari pukul 10-21 WIB | (+62) 8-9999-43-888{" | "}
+              Buka SETIAP HARI dari pukul 10-21 WIB{" | "}
             </span>
-            <span className="text-true-gray cursor-pointer hover:text-true-lighterpink inline-block">
+            <span className="inline-block">(+62) 8-9999-43-888{" | "}</span>
+            <span className="ml-1 text-true-gray cursor-pointer hover:text-true-lighterpink inline-block">
               Klik disini untuk buat appointment perawatan
             </span>
           </span>
@@ -70,7 +71,12 @@ export const Main = (props: IMainProps) => {
           <RiCloseFill />
         </div>
       </div>
-      <div className={cx("sticky lg:hidden py-2", announcement && "pt-10")}>
+      <div
+        className={cx(
+          "sticky lg:hidden py-2",
+          announcement && "pt-14 xs:pt-8 md:pt-6"
+        )}
+      >
         <div
           className={cx(
             "flex justify-between items-center px-8 py-4",
