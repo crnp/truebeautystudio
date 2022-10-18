@@ -71,15 +71,10 @@ export const Main = (props: IMainProps) => {
           <RiCloseFill />
         </div>
       </div>
-      <div
-        className={cx(
-          "sticky lg:hidden py-2",
-          announcement && "pt-14 xs:pt-8 md:pt-6"
-        )}
-      >
+      <div className={cx("sticky lg:hidden py-2", announcement && "")}>
         <div
           className={cx(
-            "flex justify-between items-center px-8 py-4",
+            "flex justify-between items-center px-8 pt-24 sm:pt-20",
             announcement && "pt-14"
           )}
         >
