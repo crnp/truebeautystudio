@@ -74,7 +74,7 @@ export const Main = (props: IMainProps) => {
       <div className="sticky lg:hidden">
         <div
           className={cx(
-            "flex justify-between items-center px-8 py-2",
+            "flex justify-between items-center px-8 py-4",
             announcement && "pt-28 sm:pt-20"
           )}
         >
