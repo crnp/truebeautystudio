@@ -71,11 +71,11 @@ export const Main = (props: IMainProps) => {
           <RiCloseFill />
         </div>
       </div>
-      <div className={cx("sticky lg:hidden", announcement && "")}>
+      <div className="sticky lg:hidden">
         <div
           className={cx(
-            "flex justify-between items-center py-4",
-            announcement && "px-8 pt-24 sm:pt-20"
+            "flex justify-between items-center px-8  py-2",
+            announcement && "pt-24 sm:pt-20"
           )}
         >
           <Image src={logo} width={111.5} height={49.94} />
